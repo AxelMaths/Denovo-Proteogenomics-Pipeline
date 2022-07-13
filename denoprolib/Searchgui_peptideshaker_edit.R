@@ -24,7 +24,7 @@ for (k in 1:length(trinity_output)) {
     system(paste("awk 'BEGIN{FS=\"|\"}{if(/^>/){print \">\"$2}else{print $0}}' ",i,"_txFinder_rev_removed1.fasta >  ",i,"_txFinder_rev_removed_fasta_trimmed1.fasta",sep=''))
     system(paste("cat ",hg19," ",i,"_txFinder_rev_removed_fasta_trimmed1.fasta > ",i,"_exp_fasta_for_searching.fasta",sep=''))
     system(paste("java -cp ",searchgui," eu.isas.searchgui.cmd.FastaCLI -in ",file.path(output,i),"_exp_fasta_for_searching.fasta -decoy",sep=''))
-    system(paste("java -cp ",searchgui," eu.isas.searchgui.cmd.IdentificationParametersCLI -out ",i,".par -db   ",file.path(output,i),"_exp_fasta_for_searching_concatenated_target_decoy.fasta -frag_tol 0.05 -fixed_mods \"iTRAQ 8-plex of K,iTRAQ 8-plex of peptide N-term,Carbamidomethylation of C\" -variable_mods \"Acetylation of protein N-term,Deamidation of N,Oxidation of M\" -msgf_num_matches 1",sep=''))
+    system(paste("java -cp ",searchgui," eu.isas.searchgui.cmd.IdentificationParametersCLI -out ",i,".par -db   ",file.path(output,i),"_exp_fasta_for_searching_concatenated_target_decoy.fasta ",sep=''))
     # combination of search engines to increase confidence 
     system(paste("java -cp ",searchgui," eu.isas.searchgui.cmd.SearchCLI -spectrum_files ",spectra_files," -id_params ",file.path(output,i),".par -output_folder ",spectra_files," -xtandem 1 -msgf 1 -tide 1  -output_default_name ",i,"_searchgui.out",sep=''))
     }
