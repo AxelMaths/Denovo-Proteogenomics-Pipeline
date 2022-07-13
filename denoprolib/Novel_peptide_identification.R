@@ -50,7 +50,7 @@ for (k in 1:length(conf_peptide_psm)) {
 	write.table(r3,row.names=F,col.names = F,quote=FALSE,file=paste("novel_peptides_for_ACTG",df1$V1,'txt',sep='.'))
 	}
 
-peptide_for_actg<-list.files(pattern="^novel_peptides_for_ACTG",recursive=TRUE)
+peptide_for_actg<-list.files(pattern="^novel_peptides_for_ACTG*.txt",recursive=TRUE)
 
 # Edit and prepare ACTG's mapping_params.xml
 mapping <- xmlParse(file.path(actg_dir,"mapping_params.xml"))
