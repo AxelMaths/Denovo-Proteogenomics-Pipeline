@@ -177,7 +177,7 @@ class novelPeptide(configReader):
             root.find(".//Construction/Outputs/Output").text = f"{self.output}/graph.ser"
 
             tree.write(f"{self.actg}/const_params.xml")
-            os.system(f"java -Xmx8G -Xss2m -jar {self.actg}/ACTG_construction.jar const_params.xml")
+            os.system(f"java -Xmx8G -Xss2m -jar {self.actg}/ACTG_construction.jar {self.actg}/const_params.xml")
 
             os.system(f"Rscript {self.denopropath}/denoprolib/novel_peptide_identification.R \
                 {self.output} {self.actg} {self.mapping_method} {self.proteindb} {self.output}/graph.ser \
