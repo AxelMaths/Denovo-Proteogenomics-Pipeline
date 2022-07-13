@@ -1,5 +1,12 @@
 # DeNoPro
 
+This repository isn't the original repository, it's just a support for an intership.
+The modifications may be not good to you.
+
+If this repository helps you, enjoy ! 
+
+
+
 DeNoPro - a denovo proteogeomics pipeline to identify clinically relevent novel variants from RNAseq and Proteomics data.
 
 ## Contents ##
