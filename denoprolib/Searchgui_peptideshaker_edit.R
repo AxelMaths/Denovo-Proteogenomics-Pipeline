@@ -44,5 +44,5 @@ setwd(output)
 pshaker_out<-list.files(pattern="*.cpsx$")
 for(k in 1:length(pshaker_out)) {
     i=pshaker_out[k]
-    system(paste("java -cp ",peptideshaker," eu.isas.peptideshaker.cmd.ReportCLI -in ",output,"/",i," -out_reports ",output," -reports 3,6,9",sep=''))
+    system(paste("java -cp ",peptideshaker," eu.isas.peptideshaker.cmd.ReportCLI -in ",output,"/",i," -out_reports ",output," -reports 3,6,9,5,7",sep=''))
     }
