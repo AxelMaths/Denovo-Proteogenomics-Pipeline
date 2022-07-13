@@ -64,7 +64,7 @@ saveXML(mapping, file = file.path(actg_dir,'mapping_params.xml'))
 
 for (k in 1:length(peptide_for_actg)) {
 #	data <- xmlParse(actg_dir,"/mapping_params.xml")
-	invisible(replaceNodes(mapping[["//Input/text()"]], newXMLTextNode(peptide_for_actg[k])))
+	invisible(replaceNodes(mapping[["//Environment/Input/text()"]], newXMLTextNode(peptide_for_actg[k])))
 	list <- strsplit(as.character(peptide_for_actg[k]), split="/")
 	df1 <- ldply(list)
 	saveXML(mapping,file=paste(df1$V1,'xml',sep='.'))
