@@ -31,7 +31,7 @@ for (k in 1:length(trinity_output)) {
 
 
 setwd(spectra_files)
-sgui_out1 <- list.files(pattern="*zip")
+sgui_out1 <- list.files(pattern="*out.zip")
 sgui_out2 <- list.files(pattern="*mgf$")
 
 for (k in 1:length(sgui_out1)) {
